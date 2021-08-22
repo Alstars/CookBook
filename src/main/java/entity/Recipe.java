@@ -1,12 +1,14 @@
 package entity;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Arrays;
 import java.util.Objects;
 
 @Entity
-@Table(name = "recipe", schema = "public", catalog = "CookBook")
-public class RecipeEntity {
+public class Recipe {
     private int recipeId;
     private String recipeName;
     private String recipeDescription;
@@ -56,11 +58,11 @@ public class RecipeEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RecipeEntity that = (RecipeEntity) o;
-        return recipeId == that.recipeId &&
-                Objects.equals(recipeName, that.recipeName) &&
-                Objects.equals(recipeDescription, that.recipeDescription) &&
-                Arrays.equals(recipeImage, that.recipeImage);
+        Recipe recipe = (Recipe) o;
+        return recipeId == recipe.recipeId &&
+                Objects.equals(recipeName, recipe.recipeName) &&
+                Objects.equals(recipeDescription, recipe.recipeDescription) &&
+                Arrays.equals(recipeImage, recipe.recipeImage);
     }
 
     @Override

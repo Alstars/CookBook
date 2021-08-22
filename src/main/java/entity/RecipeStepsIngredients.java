@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "recipe_steps_ingredients", schema = "public", catalog = "CookBook")
-public class RecipeStepsIngredientsEntity {
+public class RecipeStepsIngredients {
     private int recipeStepId;
     private int recipeStepNumber;
     private String recipeStepInstructions;
@@ -56,7 +56,7 @@ public class RecipeStepsIngredientsEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RecipeStepsIngredientsEntity that = (RecipeStepsIngredientsEntity) o;
+        RecipeStepsIngredients that = (RecipeStepsIngredients) o;
         return recipeStepId == that.recipeStepId &&
                 recipeStepNumber == that.recipeStepNumber &&
                 Objects.equals(recipeStepInstructions, that.recipeStepInstructions) &&

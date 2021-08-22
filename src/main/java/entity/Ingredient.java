@@ -1,12 +1,14 @@
 package entity;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Arrays;
 import java.util.Objects;
 
 @Entity
-@Table(name = "ingredient", schema = "public", catalog = "CookBook")
-public class IngredientEntity {
+public class Ingredient {
     private int ingredientId;
     private String ingredientName;
     private byte[] ingredientImage;
@@ -45,7 +47,7 @@ public class IngredientEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        IngredientEntity that = (IngredientEntity) o;
+        Ingredient that = (Ingredient) o;
         return ingredientId == that.ingredientId &&
                 Objects.equals(ingredientName, that.ingredientName) &&
                 Arrays.equals(ingredientImage, that.ingredientImage);

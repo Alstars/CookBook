@@ -5,7 +5,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "recipe_tag", schema = "public", catalog = "CookBook")
-public class RecipeTagEntity {
+public class RecipeTag {
     private int recipeTagId;
     private String recipeTagName;
     private String recipeTagGroup;
@@ -44,10 +44,10 @@ public class RecipeTagEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RecipeTagEntity that = (RecipeTagEntity) o;
-        return recipeTagId == that.recipeTagId &&
-                Objects.equals(recipeTagName, that.recipeTagName) &&
-                Objects.equals(recipeTagGroup, that.recipeTagGroup);
+        RecipeTag recipeTag = (RecipeTag) o;
+        return recipeTagId == recipeTag.recipeTagId &&
+                Objects.equals(recipeTagName, recipeTag.recipeTagName) &&
+                Objects.equals(recipeTagGroup, recipeTag.recipeTagGroup);
     }
 
     @Override
