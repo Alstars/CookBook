@@ -1,5 +1,7 @@
 package app.server.cook_book;
 
+import entity.Ingredient;
+
 import java.util.List;
 
 public interface IngredientService {
