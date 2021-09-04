@@ -11,6 +11,8 @@ public class RecipeStepsIngredients {
     private int recipeStepNumber;
     private String recipeStepInstructions;
     private byte[] recipeStepImage;
+    private Integer recipeStep;
+    private Integer ingredient;
 
     @Id
     @Column(name = "recipe_step_id")
@@ -68,5 +70,25 @@ public class RecipeStepsIngredients {
         int result = Objects.hash(recipeStepId, recipeStepNumber, recipeStepInstructions);
         result = 31 * result + Arrays.hashCode(recipeStepImage);
         return result;
+    }
+
+    @Basic
+    @Column(name = "recipe_step")
+    public Integer getRecipeStep() {
+        return recipeStep;
+    }
+
+    public void setRecipeStep(Integer recipeStep) {
+        this.recipeStep = recipeStep;
+    }
+
+    @Basic
+    @Column(name = "ingredient")
+    public Integer getIngredient() {
+        return ingredient;
+    }
+
+    public void setIngredient(Integer ingredient) {
+        this.ingredient = ingredient;
     }
 }
